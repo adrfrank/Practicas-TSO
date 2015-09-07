@@ -12,3 +12,6 @@ E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlD
 E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.csproj.GenerateResource.Cache
 E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.exe
 E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.pdb
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.exe.config
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.exe
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.pdb
