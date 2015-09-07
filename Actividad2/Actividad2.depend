@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1441066110 source:e:\proyectos\practias tso\actividad2\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<conio.h>
+	<queue>
+

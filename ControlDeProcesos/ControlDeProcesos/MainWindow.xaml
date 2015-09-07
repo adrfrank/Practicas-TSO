@@ -1,0 +1,53 @@
+﻿<Window x:Class="ControlDeProcesos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlDeProcesos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Thickness x:Key="MargenBotones">0,0,11,0</Thickness>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="0,0,0,10">
+            <StackPanel Margin="20,0,20,10" FlowDirection="LeftToRight" Orientation="Horizontal" >
+                <Button Grid.Column="0" Margin="{DynamicResource MargenBotones}" Command="{Binding Iniciar}">Iniciar</Button>
+                <Button Grid.Column="1" Margin="{DynamicResource MargenBotones}" Command="{Binding DetenerProceso}">Detener proceso</Button>
+                <Button Grid.Column="2" Margin="{DynamicResource MargenBotones}" Command="{Binding Salir}">Salir</Button>
+                <Button Grid.Column="3" Margin="{DynamicResource MargenBotones}" Command="{Binding Generar}" >Procesos aleatorios</Button>
+                <Label Grid.Column="0">Numero de procesos:</Label>
+                <TextBox Grid.Column="1" Width="50" HorizontalAlignment="Left" TextAlignment="Center"  Text="{Binding NumeroProcesos, Mode=TwoWay}" />
+            </StackPanel>
+
+            <ProgressBar  Margin="20,0,20,10" Height="20" Value="{Binding PorcentajeCompletado,Mode=OneWay}" />
+            <Grid Margin="20,0,20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Nuevo</Label>
+                <Label Grid.Column="1">Listo</Label>
+                <Label Grid.Column="2">Ejecucion</Label>
+                <Label Grid.Column="3">Terminado</Label>
+            </Grid>
+
+            <Grid Margin="20,0,20,10" Height="auto" MaxHeight="500"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <ListView Grid.Column="0" ItemsSource="{Binding Nuevo, Mode=OneWay}"  />
+                <ListView Grid.Column="1" ItemsSource="{Binding Listo, Mode=OneWay}"  />
+                <ListView Grid.Column="2" ItemsSource="{Binding Ejecucion, Mode=OneWay}" />
+                <ListView Grid.Column="3" ItemsSource="{Binding Terminado, Mode=OneWay}" />
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
