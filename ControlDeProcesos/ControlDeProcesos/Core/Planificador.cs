@@ -48,13 +48,10 @@ namespace ControlDeProcesos.Core
                     if (Listo.Count == MaxListo || Listo.Count > 0 && Nuevo.Count == 0)
                     {
                         Ejecucion.Enqueue(Listo.Dequeue());
-                        if (Nuevo.Count > 0)
-                            Listo.Enqueue(Nuevo.Dequeue());
+                        
                     }
-                    else
-                    {
+                    if (Nuevo.Count > 0)
                         Listo.Enqueue(Nuevo.Dequeue());
-                    }
                 }
                 else
                 {

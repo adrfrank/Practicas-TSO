@@ -31,7 +31,7 @@ namespace ControlDeProcesos.ViewModel
             set
             {
                 numeroProcesos = value;
-                generarProcesos();
+                //generarProcesos();
             }
         }
 
@@ -72,7 +72,8 @@ namespace ControlDeProcesos.ViewModel
         public ObservableCollection<Proceso> Terminado { get { return new ObservableCollection<Proceso>(plan.Terminado); } }
         public ObservableCollection<Proceso> Bloqueado { get { return new ObservableCollection<Proceso>(plan.Bloqueado); } }
 
-
+        public bool IniciarState { get { return ! plan.Iniciado; } }
+        public bool SalirState { get { return plan.Iniciado; } }
 
 
         void generarProcesos() {
@@ -84,7 +85,7 @@ namespace ControlDeProcesos.ViewModel
         void iniciarProcesos() {
             plan.Iniciar();
             timer.Start();
-
+            UpdateUI();
         }
 
         void detenerProcesos() {
@@ -124,11 +125,14 @@ namespace ControlDeProcesos.ViewModel
             OnPropertyChanged("Terminado");
             OnPropertyChanged("Bloqueado");
             OnPropertyChanged("PorcentajeCompletado");
+            OnPropertyChanged("IniciarState");
+            OnPropertyChanged("SalirState");
         }
 
         private void Plan_ProcesosTerminados(object sender, EventArgs e)
         {
             timer.Stop();
+            UpdateUI();
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)

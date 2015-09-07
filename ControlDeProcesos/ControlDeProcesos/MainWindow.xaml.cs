@@ -33,5 +33,16 @@ namespace ControlDeProcesos
             InitializeComponent();
             ViewModel = new ProcesosDulcesVM();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.E) {
+                vm.DetenerProceso.Execute(null);
+            }
+            else if (e.Key == Key.S) {
+                vm.Salir.Execute(null);
+            }
+
+        }
     }
 }
