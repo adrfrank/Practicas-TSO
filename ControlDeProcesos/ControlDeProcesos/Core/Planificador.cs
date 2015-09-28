@@ -9,18 +9,24 @@ namespace ControlDeProcesos.Core
     public class Planificador
     {
         int cont = 0;
-        DateTime lastTime;
-        DateTime lastEjecution;
+        protected DateTime lastTime;
+        protected DateTime lastEjecution;
+        protected int maxListo;
 
         public Queue<Proceso> Nuevo { get; set; }
-        public Queue<Proceso> Listo { get; set; }
+        public List<Proceso> Listo { get; set; }
         public Queue<Proceso> Ejecucion { get; set; }
         public Queue<Proceso> Terminado { get; set; }
         public Queue<Proceso> Bloqueado { get; set; }
 
         public IFabricaProceso Fabrica { get; set; }
 
-        public int MaxListo { get; set; }
+
+        public int MaxListo { get {
+                return maxListo - Bloqueado.Count;
+            } set {
+                maxListo = value;
+            } }
        
         public bool Iniciado { get; set; }
 
@@ -29,7 +35,7 @@ namespace ControlDeProcesos.Core
         public Planificador()
         {
             Nuevo = new Queue<Proceso>();
-            Listo = new Queue<Proceso>();
+            Listo = new List<Proceso>();
             Ejecucion = new Queue<Proceso>();
             Terminado = new Queue<Proceso>();
             Bloqueado = new Queue<Proceso>();
@@ -38,7 +44,7 @@ namespace ControlDeProcesos.Core
             lastEjecution = DateTime.MinValue;
         }
 
-        public void NextTime(DateTime time)
+        public virtual void NextTime(DateTime time)
         {
             if (Iniciado)
             {
@@ -47,11 +53,12 @@ namespace ControlDeProcesos.Core
                 {
                     if (Listo.Count == MaxListo || Listo.Count > 0 && Nuevo.Count == 0)
                     {
-                        Ejecucion.Enqueue(Listo.Dequeue());
+                        Ejecucion.Enqueue(Listo.First());
+                        Listo.Remove(Listo.First());
                         
                     }
-                    if (Nuevo.Count > 0)
-                        Listo.Enqueue(Nuevo.Dequeue());
+                    if (Nuevo.Count > 0)                        
+                        Listo.Add(Nuevo.Dequeue());
                 }
                 else
                 {
@@ -62,9 +69,13 @@ namespace ControlDeProcesos.Core
                         Terminado.Enqueue(Ejecucion.Dequeue());
                         if (Listo.Count > 0)
                         {
-                            Ejecucion.Enqueue(Listo.Dequeue());
-                            if(Listo.Count < MaxListo && Nuevo.Count > 0)
-                                Listo.Enqueue(Nuevo.Dequeue());
+                            Ejecucion.Enqueue(Listo.First());
+                            Listo.Remove(Listo.First());
+
+                            if (Listo.Count < MaxListo && Nuevo.Count > 0)
+                            {
+                                Listo.Add(Nuevo.Dequeue());
+                            }
 
 
                         }
@@ -96,7 +107,8 @@ namespace ControlDeProcesos.Core
             }
             while (Listo.Count > 0)
             {
-                Terminado.Enqueue(Listo.Dequeue());
+                Terminado.Enqueue(Listo.First());
+                Listo.Remove(Listo.First());
             }
             while (Nuevo.Count > 0)
             {
@@ -108,6 +120,15 @@ namespace ControlDeProcesos.Core
         {
             if (Ejecucion.Count > 0)
                 Terminado.Enqueue(Ejecucion.Dequeue());
+        }
+
+        public virtual void BloquearProceso() {
+            Bloqueado.Enqueue(Ejecucion.Dequeue());
+            if (Listo.Count > 0)
+            {
+                Ejecucion.Enqueue(Listo.First());
+                Listo.Remove(Listo.First());
+            }
         }
 
         protected virtual void OnProcesosTerminados() {

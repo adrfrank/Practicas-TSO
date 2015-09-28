@@ -36,13 +36,18 @@ namespace ControlDeProcesos
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.E) {
+            if (e.Key == Key.E)
+            {
                 vm.DetenerProceso.Execute(null);
             }
-            else if (e.Key == Key.S) {
+            else if (e.Key == Key.S)
+            {
                 vm.Salir.Execute(null);
             }
-
+            else if (e.Key == Key.B)
+            {
+                vm.Bloquear.Execute(null);
+            }
         }
     }
 }
