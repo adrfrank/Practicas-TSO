@@ -18,8 +18,15 @@ namespace ControlDeProcesos.Core
         public string Nombre { get { return ToString(); } }
 
         public int Prioridad { get; set; }
+      
 
         public TimeSpan TiempoProcesado { get; set; }
+
+        public TimeSpan TiempoBloqueado { get; set; }
+        public TimeSpan TiempoDeBloque
+        {
+            get; set;
+        }
 
         public TimeSpan Time
         {
@@ -33,8 +40,8 @@ namespace ControlDeProcesos.Core
         {
             get
             {
-                var val = TiempoProcesado.TotalSeconds * 100 / Tiempo ;
-                Debug.WriteLine(string.Format("{0}/{1}",TiempoProcesado.TotalSeconds,Tiempo));
+                var val = TiempoProcesado.TotalSeconds * 100 / Tiempo;
+                Debug.WriteLine(string.Format("{0}/{1}", TiempoProcesado.TotalSeconds, Tiempo));
                 Debug.WriteLine(val);
                 return val;
             }
@@ -43,6 +50,8 @@ namespace ControlDeProcesos.Core
         public Proceso()
         {
             TiempoProcesado = TimeSpan.Zero;
+            TiempoBloqueado = TimeSpan.Zero;
+            TiempoDeBloque = TimeSpan.FromSeconds(3);
         }
 
         public override string ToString()

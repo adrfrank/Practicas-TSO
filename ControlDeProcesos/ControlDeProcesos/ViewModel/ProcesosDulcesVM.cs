@@ -17,7 +17,7 @@ namespace ControlDeProcesos.ViewModel
     public class ProcesosDulcesVM: NotifyPropetryAdapter
     {
 
-        ICommand iniciar, generar, detener,salir;
+        ICommand iniciar, generar, detener,salir,bloquear;
         Timer timer;
         Planificador plan;
 
@@ -61,6 +61,10 @@ namespace ControlDeProcesos.ViewModel
             get { return salir == null ? salir = new ActionCommand(salirProcesos) : salir; }
         }
 
+        public ICommand Bloquear {
+            get { return bloquear == null ? bloquear = new ActionCommand(bloquearProceso) : bloquear; }
+        }
+
        public double PorcentajeCompletado {
             get {
                 return plan.Ejecucion.FirstOrDefault() == null ? 0 : plan.Ejecucion.First().PorcentajeCompletado; }
@@ -102,6 +106,11 @@ namespace ControlDeProcesos.ViewModel
 
         }
 
+        private void bloquearProceso() {
+            plan.BloquearProceso();
+            UpdateUI();
+        }
+
 
 
         public ProcesosDulcesVM()
@@ -109,7 +118,7 @@ namespace ControlDeProcesos.ViewModel
 
             timer = new Timer(10);
             timer.Elapsed += Timer_Elapsed;
-            plan = new Planificador();
+            plan = new PlanificadorSRT();
             plan.Fabrica = new FabricaDulce();
             plan.GenerarProcesos(20);
             plan.ProcesosTerminados += Plan_ProcesosTerminados;
