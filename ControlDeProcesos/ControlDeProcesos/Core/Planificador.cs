@@ -13,6 +13,8 @@ namespace ControlDeProcesos.Core
         protected DateTime lastEjecution;
         protected int maxListo;
 
+
+
         public Queue<Proceso> Nuevo { get; set; }
         public List<Proceso> Listo { get; set; }
         public Queue<Proceso> Ejecucion { get; set; }
@@ -42,6 +44,7 @@ namespace ControlDeProcesos.Core
             MaxListo = 5;
             lastTime = DateTime.Now;
             lastEjecution = DateTime.MinValue;
+
         }
 
         public virtual void NextTime(DateTime time)
@@ -54,10 +57,9 @@ namespace ControlDeProcesos.Core
                     if (Listo.Count == MaxListo || Listo.Count > 0 && Nuevo.Count == 0)
                     {
                         Ejecucion.Enqueue(Listo.First());
-                        Listo.Remove(Listo.First());
-                        
+                        Listo.Remove(Listo.First());                        
                     }
-                    if (Nuevo.Count > 0)                        
+                    if (Listo.Count < MaxListo && Nuevo.Count > 0)                       
                         Listo.Add(Nuevo.Dequeue());
                 }
                 else
@@ -82,6 +84,7 @@ namespace ControlDeProcesos.Core
                     }
 
                 }
+                //Todos los procesos terminados
                 if (Ejecucion.Count == 0 && Listo.Count == 0 && Nuevo.Count == 0)
                 {
                     Iniciado = false;
@@ -103,7 +106,7 @@ namespace ControlDeProcesos.Core
         {
             Iniciado = false;
             while (Ejecucion.Count > 0) {
-                Terminado.Enqueue(Ejecucion.Dequeue());
+                DetenerProceso();
             }
             while (Listo.Count > 0)
             {
@@ -118,8 +121,11 @@ namespace ControlDeProcesos.Core
 
         public virtual void DetenerProceso()
         {
-            if (Ejecucion.Count > 0)
-                Terminado.Enqueue(Ejecucion.Dequeue());
+            if (Ejecucion.Count > 0) {
+                var p = Ejecucion.Dequeue();
+                p.TerminoConError = true;
+                Terminado.Enqueue(p);                
+            }
         }
 
         public virtual void BloquearProceso() {
@@ -142,7 +148,7 @@ namespace ControlDeProcesos.Core
             Nuevo.Clear();
             for (var i = 0; i < num; ++i)
             {
-                var p = Fabrica.CrearProceso(cont++, 0, rdn.Next(5), rdn.Next(5) + 1);
+                var p = Fabrica.CrearProceso(cont++, 0, rdn.Next(5), rdn.Next(5) + 6);
                 Nuevo.Enqueue(p);
             }
         }

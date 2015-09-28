@@ -15,13 +15,18 @@ namespace ControlDeProcesos.Core
 
         public int Tiempo { get; set; }
 
+        public TimeSpan TiempoRestante {
+            get {
+                return Time - TiempoProcesado;
+            }
+        }
+
         public string Nombre { get { return ToString(); } }
 
         public int Prioridad { get; set; }
       
 
         public TimeSpan TiempoProcesado { get; set; }
-
         public TimeSpan TiempoBloqueado { get; set; }
         public TimeSpan TiempoDeBloque
         {
@@ -46,6 +51,8 @@ namespace ControlDeProcesos.Core
                 return val;
             }
         }
+
+        public bool TerminoConError { get; set; }
 
         public Proceso()
         {

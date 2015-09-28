@@ -26,3 +26,17 @@ E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\MainWin
 E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.g.resources
 E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.Properties.Resources.resources
 E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.csproj.GenerateResource.Cache
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.exe.config
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.exe
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.pdb
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.csprojResolveAssemblyReference.cache
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\MainWindow.g.cs
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\App.g.cs
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos_MarkupCompile.cache
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos_MarkupCompile.lref
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\MainWindow.baml
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.g.resources
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.Properties.Resources.resources
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.csproj.GenerateResource.Cache
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.exe
+D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.pdb

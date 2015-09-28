@@ -118,7 +118,7 @@ namespace ControlDeProcesos.ViewModel
 
             timer = new Timer(10);
             timer.Elapsed += Timer_Elapsed;
-            plan = new PlanificadorSRT();
+            plan = new PlanificadorRR();
             plan.Fabrica = new FabricaDulce();
             plan.GenerarProcesos(20);
             plan.ProcesosTerminados += Plan_ProcesosTerminados;

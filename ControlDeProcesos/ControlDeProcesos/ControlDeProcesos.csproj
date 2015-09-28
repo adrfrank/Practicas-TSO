@@ -59,6 +59,7 @@
     <Compile Include="Core\Dulce.cs" />
     <Compile Include="Core\FabricaProceso.cs" />
     <Compile Include="Core\Planificador.cs" />
+    <Compile Include="Core\PlanificadorRR.cs" />
     <Compile Include="Core\PlanificadorSRT.cs" />
     <Compile Include="Core\Proceso.cs" />
     <Compile Include="ViewModel\ActionCommand.cs" />
