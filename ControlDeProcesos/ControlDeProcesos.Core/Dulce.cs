@@ -30,7 +30,8 @@ namespace ControlDeProcesos.Core
 
         public override string ToString()
         {
-            return "Id: "+Id+", Tu dulce es de " + Tipo;
+            //return "Id: "+Id+", Tu dulce es de " + Tipo+", "+Tiempo+"s";
+            return "Id: "+Id+", Tu dulce es de " + Tipo + ", t: "+Tiempo;
         }
     }
 }

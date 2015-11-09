@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ContnrolDeProcesos.Core")]
+[assembly: AssemblyTitle("ControlDeProcesos.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ContnrolDeProcesos.Core")]
+[assembly: AssemblyProduct("ControlDeProcesos.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a414195f-45c0-40a8-8f6d-4799b35f7327")]
+[assembly: Guid("d655ca4a-c610-43a3-9ceb-f54b1bcef5ba")]
 
 // Version information for an assembly consists of the following four values:
 //

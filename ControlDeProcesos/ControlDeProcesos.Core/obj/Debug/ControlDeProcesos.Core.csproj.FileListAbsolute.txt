@@ -1,5 +1,0 @@
-E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos.Core\bin\Debug\ControlDeProcesos.Core.dll
-E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos.Core\bin\Debug\ControlDeProcesos.Core.pdb
-E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos.Core\obj\Debug\ControlDeProcesos.Core.csprojResolveAssemblyReference.cache
-E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos.Core\obj\Debug\ControlDeProcesos.Core.dll
-E:\Proyectos\Practias TSO\ControlDeProcesos\ControlDeProcesos.Core\obj\Debug\ControlDeProcesos.Core.pdb
