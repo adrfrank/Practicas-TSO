@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControlDeProcesos"
         mc:Ignorable="d"
         KeyDown="Window_KeyDown"
-        Title="Control de procesos" Height="350" Width="525">
+        Title="Control de procesos (RR)" Height="350" Width="670">
     <Window.Resources>
         <Thickness x:Key="MargenBotones">0,0,11,0</Thickness>
     </Window.Resources>
@@ -18,8 +18,9 @@
                 <Button Grid.Column="1" Margin="{DynamicResource MargenBotones}" Command="{Binding Bloquear}" IsEnabled="{Binding SalirState, Mode=OneWay}" >Bloquear proceso</Button>
                 <Button Grid.Column="2" Margin="{DynamicResource MargenBotones}" Command="{Binding Salir}" IsEnabled="{Binding SalirState, Mode=OneWay}">Salir</Button>
                 <Button Grid.Column="3" Margin="{DynamicResource MargenBotones}" Command="{Binding Generar}" IsEnabled="{Binding IniciarState, Mode=OneWay}" >Procesos aleatorios</Button>
-                <Label Grid.Column="0">Numero de procesos:</Label>
-                <TextBox Grid.Column="1" Width="50" HorizontalAlignment="Left" TextAlignment="Center"  Text="{Binding NumeroProcesos, Mode=TwoWay}"  IsEnabled="{Binding IniciarState, Mode=OneWay}" />
+                <Label Grid.Column="0" Margin="{DynamicResource MargenBotones}">Numero de procesos:</Label>
+                <TextBox Grid.Column="1" Margin="{DynamicResource MargenBotones}" Width="50" HorizontalAlignment="Left" TextAlignment="Center"  Text="{Binding NumeroProcesos, Mode=TwoWay}"  IsEnabled="{Binding IniciarState, Mode=OneWay}" />
+                <Button Margin="{DynamicResource MargenBotones}" Command="{Binding AbrirTablaProcesos}" >Tabla</Button>
             </StackPanel>
             <ProgressBar  Margin="20,0,20,10" Height="20" Value="{Binding PorcentajeCompletado,Mode=OneWay}" />
             <Grid Margin="20,0,20,10">

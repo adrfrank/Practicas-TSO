@@ -46,9 +46,13 @@ namespace ControlDeProcesos.Core
                 {
                     Proceso ejec = Ejecucion.First();
                     ejec.TiempoProcesado += time - lastTime;
+                    //Tiempo de ejecución
+                    if (ejec.TiempoRespuesta == null) ejec.TiempoRespuesta = TiempoEjecucion;
+                    TiempoEjecucion += time - lastTime;
+
                     QuantumCounter += time - lastTime;
 
-                    if (ejec.TiempoProcesado >= ejec.Time)
+                    if (ejec.TiempoProcesado >= ejec.TiempoDeServicio)
                     {
                         Terminado.Enqueue(Ejecucion.Dequeue());
                     }

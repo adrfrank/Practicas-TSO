@@ -17,7 +17,7 @@ namespace ControlDeProcesos.Core
 
         public TimeSpan TiempoRestante {
             get {
-                return Time - TiempoProcesado;
+                return TiempoDeServicio - TiempoProcesado;
             }
         }
 
@@ -33,11 +33,27 @@ namespace ControlDeProcesos.Core
             get; set;
         }
 
-        public TimeSpan Time
+        public TimeSpan TiempoDeServicio
         {
             get
             {
                 return TimeSpan.FromSeconds(Tiempo);
+            }
+        }
+
+        public String Estado {
+            get {
+                if (TerminoConError)
+                {
+                    return "Error";
+                }
+                else if (TiempoRestante < TimeSpan.Zero)
+                {
+                    return "Ejecutado";
+                }
+                else {
+                    return ":v";
+                }
             }
         }
 
@@ -53,6 +69,7 @@ namespace ControlDeProcesos.Core
         }
 
         public bool TerminoConError { get; set; }
+        public TimeSpan? TiempoRespuesta { get; set; }
 
         public Proceso()
         {
