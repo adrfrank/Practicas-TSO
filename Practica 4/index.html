@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Practica 4</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-app="app">
+	<div class="navbar navbar-inverse ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Practica 4</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+	<section ng-controller="barberiaController">
+		<h2>{{title}}</h2>
+	</section>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="barberiaController.js"></script>
+</body>
+</html>
