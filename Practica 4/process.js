@@ -3,6 +3,7 @@ window.ProcessDefaults = {
 	tServicio: 10,
 	prioridad: 5,
 	count:1,
+	tInanicion: 10,
 	getCount:function  () {
 		return this.count++;
 	},
@@ -10,7 +11,8 @@ window.ProcessDefaults = {
 		enEspera: "En espera",
 		ejecutandose: "Ejecutandose",
 		terminadoPorSRT: "Terminado por SRT",
-		terminadoPorPrioridad: "Terminado por prioridad"
+		terminadoPorPrioridad: "Terminado por prioridad",
+		inanicion: "Terminado por inanición"
 	}
 }
 
@@ -28,5 +30,5 @@ function Process (t) {
 	this.tLlegada =  Math.floor(t+ProcessDefaults.tLlegada*Math.random());
 	this.tServicio = Math.floor(ProcessDefaults.tServicio*Math.random());
 	this.prioridad = Math.floor(ProcessDefaults.prioridad*Math.random());
-
+	this.tInanicion = Math.floor(ProcessDefaults.tInanicion*Math.random());
 }

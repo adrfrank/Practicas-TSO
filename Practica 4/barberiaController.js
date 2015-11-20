@@ -26,11 +26,16 @@ app.controller("barberiaController",["$scope",function  ($scope) {
 			$scope.processes.push(new Process($scope.time));
 		}		
 	}
+	$scope.verifyInanicion = function(){
+
+	}
+
 	$scope.timeCount=function()
 	{		
 		if($scope.running){
 			$scope.time++;
 			debugPrint($scope.time);
+			$spcope.verifyInanicion();
 			if($scope.time%$scope.fillTime == 0)
 				$scope.fillProcesses();
 			$scope.$apply();
