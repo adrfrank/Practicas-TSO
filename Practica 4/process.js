@@ -8,7 +8,9 @@ window.ProcessDefaults = {
 	},
 	states:{
 		enEspera: "En espera",
-		ejecutandose: "Ejecutandose"
+		ejecutandose: "Ejecutandose",
+		terminadoPorSRT: "Terminado por SRT",
+		terminadoPorPrioridad: "Terminado por prioridad"
 	}
 }
 
@@ -20,6 +22,7 @@ function Process (t) {
 	this.tServicio = 0;
 	this.prioridad = 0;
 	this.tEjecucion = 0;
+	this.tAtendido =0;
 	this.state = ProcessDefaults.states.enEspera;
 	//random process
 	this.tLlegada =  Math.floor(t+ProcessDefaults.tLlegada*Math.random());

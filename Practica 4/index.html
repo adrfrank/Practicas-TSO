@@ -21,53 +21,101 @@
             </div>
         </div>
     </div>
-	<section ng-controller="barberiaController" class="container-fluid body-content">
-		<h2>{{title}}</h2>
-        <div>
+    <section ng-controller="barberiaController" class="container-fluid body-content">
+      <h2>{{title}}</h2>
+      <div class="row">
+        <div class="col-sm-4">
             <strong>{{running?"Corriendo":"Detenido"}} - {{time}}s</strong>
             <button class="btn btn-primary" ng-click="runStop()">
                 <span class="glyphicon glyphicon-play" ng-show="!running"></span>
                 <span class="glyphicon glyphicon-stop" ng-show="running"></span>
             </button>
         </div>
-        <div class="row">
-            <section class="col-sm-6">
-                <header><h3>Tabla de procesos</h3></header>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Estado</th>
-                            <th>T<sub>Llegada</sub></th>
-                            <th>T<sub>Servicio</sub></th>
-                            <th>T<sub>Ejecuci&oacute;n</sub></th>
-                            <th>Prioridad</th>
-                        </tr>
-                    </thead>    
-                    <tbody>
-                        <tr ng-repeat="p in processes">
-                            <td>{{p.id}}</td>
-                            <td>{{p.name}}</td>
-                            <td>{{p.state}}</td>
-                            <td>{{p.tLlegada}}</td>
-                            <td>{{p.tServicio}}</td>
-                            <td>{{p.tEjecucion}}</td>
-                            <td>{{p.prioridad}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <section class="col-sm-6">
-
+        <div class="col-sm-4">
+            <h4>Barbero SRT</h4>
+            <div>
+                <label>Id:</label> {{strProcess.id}} <br />
+                <label>Nombre:</label> {{strProcess.name}} <br />
+                <label>T<sub>Llegada</sub>:</label> {{strProcess.tLlegada}} <br />
+                <label>T<sub>Servicio</sub>:</label> {{strProcess.tServicio}} <br />
+                <label>T<sub>Ejecuci&oacute;n</sub>:</label> {{strProcess.tEjecucion}} <br />
+                <label>Prioridad:</label> {{strProcess.prioridad}} <br />
             </div>
         </div>
+        <div class="col-sm-4">
+            <h4>Barbero prioridad</h4>
+             <div>
+                <label>Id:</label> {{priorityProcess.id}} <br />
+                <label>Nombre:</label> {{priorityProcess.name}} <br />
+                <label>T<sub>Llegada</sub>:</label> {{priorityProcess.tLlegada}} <br />
+                <label>T<sub>Servicio</sub>:</label> {{priorityProcess.tServicio}} <br />
+                <label>T<sub>Ejecuci&oacute;n</sub>:</label> {{priorityProcess.tEjecucion}} <br />
+                <label>Prioridad:</label> {{priorityProcess.prioridad}} <br />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <section class="col-sm-6">
+            <header><h3>Tabla de procesos</h3></header>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>T<sub>Llegada</sub></th>
+                        <th>T<sub>Servicio</sub></th>
+                        <th>T<sub>Ejecuci&oacute;n</sub></th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr ng-repeat="p in processes">
+                        <td>{{p.id}}</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.state}}</td>
+                        <td>{{p.tLlegada}}</td>
+                        <td>{{p.tServicio}}</td>
+                        <td>{{p.tEjecucion}}</td>
+                        <td>{{p.prioridad}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="col-sm-6">
+            <header><h3>Tabla de procesos terminados</h3></header>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>T<sub>Llegada</sub></th>
+                        <th>T<sub>Servicio</sub></th>
+                        <th>T<sub>Ejecuci&oacute;n</sub></th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr ng-repeat="p in terminated">
+                        <td>{{p.id}}</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.state}}</td>
+                        <td>{{p.tLlegada}}</td>
+                        <td>{{p.tServicio}}</td>
+                        <td>{{p.tEjecucion}}</td>
+                        <td>{{p.prioridad}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 
-	</section>
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/angular/angular.js"></script>
-	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="process.js"></script>
-	<script src="barberiaController.js"></script>
+</section>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="process.js"></script>
+<script src="barberiaController.js"></script>
 </body>
 </html>
