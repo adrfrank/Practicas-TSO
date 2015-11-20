@@ -26,7 +26,14 @@ app.controller("barberiaController",["$scope",function  ($scope) {
 			$scope.processes.push(new Process($scope.time));
 		}		
 	}
-	$scope.verifyInanicion = function(){
+	$scope.verifyInanicion = function () {
+	    for (var i = $scope.processes.length-1; i>=0; ++i) {
+	        if ($scope.time - $scope.processes[i].tLlegada >= $scope.processes[i].tInanicion) {
+	            $scope.processes[i].state = ProcessDefaults.states.inanicion;
+	            $scope.terminated.push($scope.processes[i]);
+	            $scope.processes.splice(i, 1);
+	        }
+	    }
 
 	}
 
@@ -35,7 +42,7 @@ app.controller("barberiaController",["$scope",function  ($scope) {
 		if($scope.running){
 			$scope.time++;
 			debugPrint($scope.time);
-			$spcope.verifyInanicion();
+			$scope.verifyInanicion();
 			if($scope.time%$scope.fillTime == 0)
 				$scope.fillProcesses();
 			$scope.$apply();

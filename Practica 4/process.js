@@ -12,7 +12,7 @@ window.ProcessDefaults = {
 		ejecutandose: "Ejecutandose",
 		terminadoPorSRT: "Terminado por SRT",
 		terminadoPorPrioridad: "Terminado por prioridad",
-		inanicion: "Terminado por inanición"
+		inanicion: "Terminado por inanicion"
 	}
 }
 

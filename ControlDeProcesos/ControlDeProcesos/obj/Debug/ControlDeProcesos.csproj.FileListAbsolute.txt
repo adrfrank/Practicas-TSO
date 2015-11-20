@@ -40,3 +40,7 @@ D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\Control
 D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.csproj.GenerateResource.Cache
 D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.exe
 D:\Proyectos\practicas-tso\ControlDeProcesos\ControlDeProcesos\obj\Debug\ControlDeProcesos.pdb
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\TablaProcesos.g.cs
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\obj\Debug\TablaProcesos.baml
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.Core.dll
+E:\Proyectos\Practicas-TSO\ControlDeProcesos\ControlDeProcesos\bin\Debug\ControlDeProcesos.Core.pdb

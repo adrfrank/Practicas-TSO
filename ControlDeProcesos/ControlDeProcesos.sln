@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlDeProcesos", "ControlDeProcesos\ControlDeProcesos.csproj", "{3E76CCB9-5D28-4CFA-886F-18BD85AE5C30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlDeProcesos.Core", "ControlDeProcesos.Core\ControlDeProcesos.Core.csproj", "{D655CA4A-C610-43A3-9CEB-F54B1BCEF5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlDeProcesos.Dulceria", "ControlDeProcesos.Dulceria\ControlDeProcesos.Dulceria.csproj", "{98E22084-194C-428A-843A-70FBDA3C80B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3E76CCB9-5D28-4CFA-886F-18BD85AE5C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E76CCB9-5D28-4CFA-886F-18BD85AE5C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E76CCB9-5D28-4CFA-886F-18BD85AE5C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D655CA4A-C610-43A3-9CEB-F54B1BCEF5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D655CA4A-C610-43A3-9CEB-F54B1BCEF5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D655CA4A-C610-43A3-9CEB-F54B1BCEF5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D655CA4A-C610-43A3-9CEB-F54B1BCEF5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E22084-194C-428A-843A-70FBDA3C80B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E22084-194C-428A-843A-70FBDA3C80B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E22084-194C-428A-843A-70FBDA3C80B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E22084-194C-428A-843A-70FBDA3C80B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
