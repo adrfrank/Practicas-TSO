@@ -1,5 +1,5 @@
 window.ProcessDefaults = {
-	tLlegada:5,
+	tLlegada:0,
 	tServicio: 10,
 	prioridad: 5,
 	count:1,

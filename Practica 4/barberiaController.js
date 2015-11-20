@@ -37,13 +37,28 @@ app.controller("barberiaController",["$scope",function  ($scope) {
 		}
 	}
 	$scope.getNextSRT=function(){
-		$scope.strProcess = $scope.processes[0];
-		$scope.processes.splice(0,1);
+		var tmax = 9999,index=-1;
+		for(var i=0; i< $scope.processes.length;++i){
+			if($scope.processes[i].tServicio < tmax){
+				tmax = $scope.processes[i].tServicio;
+				index = i;
+			}
+		}
+		$scope.strProcess = $scope.processes[index];
+		$scope.processes.splice(index,1);
 	}
 
 	$scope.getNextPriority=function(){
-		$scope.priorityProcess = $scope.processes[0];
-		$scope.processes.splice(0,1);
+		var tmax = 9999;
+		var index=-1;
+		for(var i=0; i< $scope.processes.length;++i){
+			if($scope.processes[i].prioridad < tmax){
+				tmax = $scope.processes[i].prioridad;
+				index = i;
+			}
+		}
+		$scope.priorityProcess = $scope.processes[index];
+		$scope.processes.splice(index,1);
 	}
 
 	$scope.barberoSRTCount = function(){
